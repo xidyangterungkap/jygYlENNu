@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const encoded = "aHR0cHM6Ly9tdXR0b25hbmtsZS5jb20vYXd3cWlzZjQ/a2V5PTE4YWFmZWJkNDUxY2QxYWI3ZDNlM2EyNzBiNzViMzkz";
+    document.getElementById("link").href = atob(encoded);
+});
+</script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:100%;height:100%;overflow:hidden;background:#000;}
+a{display:block;width:100%;height:100%;text-decoration:none;}
+.video-frame{position:relative;width:100vw;height:100vh;overflow:hidden;}
+.video-frame img{width:100%;height:100%;object-fit:cover;display:block;}
+.video-frame::after{
+content:"";
+position:absolute;
+left:0;
+bottom:0;
+width:100%;
+height:30%;
+background:linear-gradient(to top,rgba(0,0,0,.8),transparent);
+}
+.play-button{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:75px;
+height:75px;
+background:rgba(0,0,0,.4);
+border-radius:50%;
+border:2px solid rgba(255,255,255,.8);
+display:flex;
+align-items:center;
+justify-content:center;
+}
+.play-button::before{
+content:"▶";
+color:#fff;
+font-size:26px;
+margin-left:4px;
+}
+</style>
+</head>
+
+<body>
+
+<a id="link">
+    <div class="video-frame">
+        <img src="https://cdn.aceimg.com/jygYlENNu.png" alt="Thumbnail">
+        <div class="play-button"></div>
+    </div>
+</a>
+
+</body>
+</html>
